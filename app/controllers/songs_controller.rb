@@ -12,7 +12,10 @@ class SongsController < ApplicationController
   end 
   
   def edit
-    
+    if @song.update(song_params)
+      redirect_to song_path(@song)
+    else
+      render :new 
   end 
   
   def update 
